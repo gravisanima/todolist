@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1>List</h1>
+    <ul id='0'>
+    </ul>
+    <button onclick="add()">Add a task</button>
+</center>
+</body>
+<script>
+    let data = []
+    let i = 0;
+    let add = ()=>{
+        i++;
+        let a = document.createElement('li');
+        a.innerHTML = '<li id='+i+'><input title="What to do..."><button onclick="deleteLi('+i+')">Delete</button></li>';
+        document.getElementById('0').appendChild(a)
+        data.push({id: i, text: ''})
+        console.log(data)
+    }
+    let deleteLi = (i)=>{
+       document.getElementById(i).remove()
+
+    }
+</script>
+<style>
+    li{
+        padding: 6px;
+        list-style-type: none;
+    }
+</style>
+</html>
